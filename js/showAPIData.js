@@ -38,7 +38,7 @@ const showCategories = (petCategories) => {
         `;
     petCategoryContainer.appendChild(div);
   });
-  loadSpinner(false)
+  loadSpinner(false);
 };
 
 // Fetches data of pets under a specific category
@@ -53,12 +53,11 @@ const getSpecificDataByAPI = async (id) => {
 // Show Pet Section
 
 const showAllPets = (allPets) => {
-  
   const petContainer = document.getElementById("pet-container");
   petContainer.innerText = "";
-  
-  if(!allPets.length){
-    petContainer.classList.remove('grid')
+
+  if (!allPets.length) {
+    petContainer.classList.remove("grid");
     petContainer.innerHTML = `
    <div class="flex justify-center items-center">
     <div>
@@ -66,11 +65,10 @@ const showAllPets = (allPets) => {
      <h3 class="font-bold text-3xl">No Information Available</h3>
     </div>
    </div>
-    `
-  }else{
-    petContainer.classList.add('grid')
+    `;
+  } else {
+    petContainer.classList.add("grid");
   }
-
 
   allPets.forEach((pet) => {
     const div = document.createElement("div");
@@ -106,13 +104,17 @@ const showAllPets = (allPets) => {
       <p class="border-t-2 border-black/10 mt-4">
 
       <div class="flex justify-between flex-wrap gap-2 mt-3">
-            <div onclick="handleSelect('${pet.image}')" class="border rounded-md ">
+            <div onclick="handleSelect('${pet.image}', '${
+      pet.petId
+    }', this)" class="border rounded-md ">
               <i class="fa-regular btn p-1 fa-thumbs-up text-2xl  flex justify-center items-center cursor-pointer"></i>
             </div>
             <div class="border rounded-md ">
              <button class=" btn p-1 text-[#0E7A81] text-xl">Adopt</button>
             </div>
-            <div class="border rounded-md ">
+            <div onclick="showDetails('${
+              pet.petId
+            }')" class="border rounded-md ">
              <button class=" btn p-1 text-[#0E7A81] text-xl">Details</button>
             </div>
       </div>
@@ -120,22 +122,30 @@ const showAllPets = (allPets) => {
        `;
 
     petContainer.appendChild(div);
-    petContainer.classList.add('border', 'border-gray-100');
-    loadSpinner(false)
+    petContainer.classList.add("border", "border-gray-100");
+    loadSpinner(false);
   });
 };
 
-
-
 // Selected Pets
 
-const handleSelect = (pet_image) => {
-  
-}
-
-
-
-
+const validate = [];
+const handleSelect = (pet_image, id, e) => {
+  if (!validate.includes(id)) {
+    e.childNodes[1].className = `fa-solid btn p-1 fa-thumbs-up text-2xl  flex justify-center items-center cursor-pointer`;
+    const selectedPet = document.getElementById("selected-pet");
+    const div = document.createElement("div");
+    div.className = `p-4`;
+    div.innerHTML = `
+      <img class="rounded-lg " src="${pet_image}" />
+      `;
+    selectedPet.appendChild(div);
+    validate.push(id);
+    selectedPet.classList.add("border", "border-gray-100");
+  } else {
+    alert("Can Not Select a pet twice");
+  }
+};
 
 /*  
 {
