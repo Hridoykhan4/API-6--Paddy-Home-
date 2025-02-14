@@ -43,15 +43,15 @@ const showCategories = (petCategories) => {
 
 // Fetches data of pets under a specific category
 const getSpecificDataByAPI = async (id) => {
-  loadSpinner(true)
+  loadSpinner(true);
   const res = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${id}`
   );
   const data = await res.json();
-  document.getElementById('pet-container').innerHTML = ''
+  document.getElementById("pet-container").innerHTML = "";
   setTimeout(() => {
     showAllPets(data.data);
-  },2000)
+  }, 2000);
 };
 
 // Show Pet Section
@@ -61,7 +61,7 @@ const showAllPets = (allPets) => {
   petContainer.innerText = "";
 
   if (!allPets.length) {
-    loadSpinner(false)
+    loadSpinner(false);
     petContainer.classList.remove("grid");
     petContainer.innerHTML = `
    <div class="flex justify-center items-center">
@@ -103,7 +103,9 @@ const showAllPets = (allPets) => {
           }
       </div>
       <div class="mt-3 flex items-center gap-3 font-semibold text-gray-600 ">
-          <i class="fa-solid fa-shield-cat"></i><span> <span id="price-container">Price: ${pet.price}</span>
+          <i class="fa-solid fa-shield-cat"></i><span> <span id="price-container">Price: ${
+            pet.price
+          }</span>
       </div>
 
       <p class="border-t-2 border-black/10 mt-4">
@@ -114,7 +116,7 @@ const showAllPets = (allPets) => {
     }', this)" class="border rounded-md ">
               <i class="fa-regular btn p-1 fa-thumbs-up text-2xl  flex justify-center items-center cursor-pointer"></i>
             </div>
-            <div class="border rounded-md ">
+            <div onclick="adoptBtnHandler(this)" class="border rounded-md ">
              <button class=" btn p-1 text-[#0E7A81] text-xl">Adopt</button>
             </div>
             <div onclick="showDetails('${
@@ -151,26 +153,3 @@ const handleSelect = (pet_image, id, e) => {
     alert("Can Not Select a pet twice");
   }
 };
-
-/*  
-{
-    "petId": 15,
-    "breed": "Holland Lop",
-    "category": "Rabbit",
-    "date_of_birth": "2023-07-15",
-    "price": 200,
-    "image": "https://i.ibb.co.com/RQ6smFK/pet-15.jpg",
-    "gender": "Male",
-    "pet_details": "This charming male Holland Lop rabbit, born on July 15, 2023, is playful and enjoys hopping around. Priced at $200, he makes a wonderful pet for children. He is not vaccinated.",
-    "vaccinated_status": "Not",
-    "pet_name": "Binky"
-}
-*/
-
-/* 
-{
-    "id": 1,
-    "category": "Cat",
-    "category_icon": "https://i.ibb.co.com/N7dM2K1/cat.png"
-}
-*/
