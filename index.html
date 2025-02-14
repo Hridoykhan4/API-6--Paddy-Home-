@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grateful Organic</title>
+    <link rel="icon" type="image/x-icon" href="images/headLogo.jpg" />
+
+    <!-- Tailwind css and Daisyui CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fontawsome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- Google font CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .font-manrope {
+        font-family: "Manrope", system-ui;
+      }
+
+      .selected-button {
+        background-color: #0e7a81; /* Change to your desired color */
+        color: white; /* Optional for text color */
+        border-color: #0e7a81; /* Optional for border color */
+      }
+    </style>
+  </head>
+
+  <body class="font-manrope">
+    <header class="w-11/12 mx-auto max-w-[1440px]">
+      <div class="navbar items-center bg-base-100">
+        <div class="navbar-start">
+          <a class="text-xl">
+            <div class="flex items-center gap-3">
+              <img src="./images/logo.webp" alt="" />
+              <p>Paddy Home</p>
+            </div>
+          </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal space-x-3 px-1">
+            <li>
+              <a
+                class="font-bold hover:bg-green-600 transition-all duration-500 ease-in-out hover:text-white"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-bold hover:bg-green-600 transition-all duration-500 ease-in-out hover:text-white"
+                >Shop</a
+              >
+            </li>
+            <li>
+              <a
+                class="font-bold hover:bg-green-600 transition-all duration-500 ease-in-out hover:text-white"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a class="md:block hidden"
+            ><img src="./images/Person.png" alt=""
+          /></a>
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-8 w-8"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            >
+              <li>
+                <a
+                  class="font-bold hover:bg-green-600 transition-all duration-500 ease-in-out hover:text-white"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="font-bold hover:bg-green-600 transition-all duration-500 ease-in-out hover:text-white"
+                  >Shop</a
+                >
+              </li>
+              <li>
+                <a
+                  class="font-bold hover:bg-green-600 transition-all duration-500 ease-in-out hover:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="w-11/12 mx-auto py-4 max-w-[1440px]">
+      <section class="flex items-center justify-center text-center">
+        <div class="space-y-4">
+          <h3 class="text-gray-600 font-bold">
+            Bringing Families Together ❤️‍🔥
+          </h3>
+          <h1 class="font-extrabold leading-2 tracking-wider text-3xl">
+            Your Path to Adoption <br />
+            Starts Here
+          </h1>
+
+          <p class="md:w-2/3 font-semibold mx-auto">
+            It is a well-known fact that pet lovers often get drawn to the adorable content of a page when exploring pet care tips. The reason for using engaging pet stories is that they create a delightful experience for dog and cat enthusiasts
+          </p>
+
+          <button
+            class="bg-[#0E7A81] px-3 py-2 text-white font-bold rounded-lg"
+          >
+            <a href="#go">View More</a>
+          </button>
+
+          <div class="flex lg:w-1/2 mx-auto items-center justify-center">
+            <img src="./images/pet.webp" class="w-full h-full" alt="" />
+          </div>
+
+          <div>
+            <h3 class="mb-3 mt-8 font-extrabold">Adopt Your Best Friend</h3>
+            <p class="md:w-2/3 mx-auto text-gray-600 font-semibold">
+              It is a well-known fact that pet lovers often get captivated by the heartwarming content of a page when exploring pet care tips. The reason for using engaging pet <br> stories is that they bring joy and valuable insights into the world of dogs and cats
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-12">
+        <div
+          id="show-pet-category-container"
+          class="grid grid-cols-2 gap-4 justify-center items-center md:grid-cols-4"
+        >
+        
+      </div>
+      </section>
+
+      <!-- Best Deals For You -->
+
+      <section class="my-8 w-11/12 md:mx-auto">
+        <div id="go" class="flex justify-between items-center">
+          <h3 class="font-bold text-xl">Best Deals For You</h3>
+          <button
+            id="sort-price-btn"
+            class="border btn bg-[#0E7A81] text-white font-semibold"
+          >
+            Sort by Price
+          </button>
+        </div>
+
+        <div id="loadingSpinner" class="w-20 mx-auto hidden">
+          <span class="loading loading-bars loading-lg w-full"></span>
+        </div>
+
+        <div class="flex md:flex-row flex-col-reverse">
+          <div class="md:w-2/3">
+            <div
+              id="pet-container"
+              class="grid gap-4 mt-4 p-2 grid-cols-1 md:grid-cols-3"
+            ></div>
+          </div>
+
+          <div class="md:w-2/6">
+            <div
+              id="selected-pet"
+              class="grid gap-4 mt-4 p-2 grid-cols-2"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+
+      <dialog id="myModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modal-body"></div>
+
+          <div class="">
+            <form method="dialog">
+              <button class="btn w-full text-green-600">Cancel</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <dialog id="newModal" class="modal modal-bottom sm:modal-middle">
+        <div class="flex items-center justify-center modal-box flex-col">
+          <h3 class="my-2 text-xl font-extrabold">Congrats</h3>
+          <h3 class="text-lg font-bold">
+            <i class="fa-solid fa-handshake-angle text-red-500 text-2xl"></i>
+          </h3>
+          <p class="font-semibold">Adoption Process is Start For Your Pet</p>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button id="countdown" class="btn"></button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+    </main>
+
+    <footer class="footer bg-base-200 text-base-content p-10">
+      <nav>
+        <h6 class="footer-title">Services</h6>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Company</h6>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </nav>
+      <nav>
+        <h6 class="footer-title">Legal</h6>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </nav>
+      <form>
+        <h6 class="footer-title">Newsletter</h6>
+        <fieldset class="form-control w-80">
+          <label class="label">
+            <span class="label-text">Enter your email address</span>
+          </label>
+          <div class="join">
+            <input
+              type="text"
+              placeholder="username@site.com"
+              class="input input-bordered join-item"
+            />
+            <!-- <button class="btn btn-primary join-item">Subscribe</button> -->
+          </div>
+        </fieldset>
+      </form>
+    </footer>
+
+    <!-- Script -->
+    <script src="./js/app.js"></script>
+    <script src="./js/utility.js"></script>
+  </body>
+</html>
