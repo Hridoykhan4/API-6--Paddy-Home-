@@ -43,11 +43,15 @@ const showCategories = (petCategories) => {
 
 // Fetches data of pets under a specific category
 const getSpecificDataByAPI = async (id) => {
+  loadSpinner(true)
   const res = await fetch(
     `https://openapi.programming-hero.com/api/peddy/category/${id}`
   );
   const data = await res.json();
-  showAllPets(data.data);
+  document.getElementById('pet-container').innerHTML = ''
+  setTimeout(() => {
+    showAllPets(data.data);
+  },2000)
 };
 
 // Show Pet Section
@@ -57,6 +61,7 @@ const showAllPets = (allPets) => {
   petContainer.innerText = "";
 
   if (!allPets.length) {
+    loadSpinner(false)
     petContainer.classList.remove("grid");
     petContainer.innerHTML = `
    <div class="flex justify-center items-center">
@@ -98,7 +103,7 @@ const showAllPets = (allPets) => {
           }
       </div>
       <div class="mt-3 flex items-center gap-3 font-semibold text-gray-600 ">
-          <i class="fa-solid fa-shield-cat"></i><span> Price: ${pet.price}
+          <i class="fa-solid fa-shield-cat"></i><span> <span id="price-container">Price: ${pet.price}</span>
       </div>
 
       <p class="border-t-2 border-black/10 mt-4">
