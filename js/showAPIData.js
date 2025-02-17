@@ -25,11 +25,12 @@ const showCategories = (petCategories) => {
       "hover:shadow-xl",
       "btn",
       "w-full",
-      "h-full"
+      "h-full",
+      "same-btn"
     );
 
     div.addEventListener("click", () => {
-      getSpecificDataByAPI(`${category}`);
+      getSpecificDataByAPI(`${category}`, `${id}`);
     });
 
     div.innerHTML = `
@@ -41,11 +42,23 @@ const showCategories = (petCategories) => {
   loadSpinner(false);
 };
 
+const removeAllBtnColors = () => {
+  const sameBtn = document.querySelectorAll(".same-btn");
+  console.log(sameBtn);
+  for (const btn of sameBtn) {
+    btn.classList.remove("btn-primary", "hover:bg-sky-700");
+  }
+};
+
 // Fetches data of pets under a specific category
-const getSpecificDataByAPI = async (id) => {
+const getSpecificDataByAPI = async (categoryName, id) => {
+  removeAllBtnColors();
+  const activeBtn = document.getElementById(`btn-${id}`);
+  activeBtn.classList.add("btn-primary", "hover:bg-sky-700");
+
   loadSpinner(true);
   const res = await fetch(
-    `https://openapi.programming-hero.com/api/peddy/category/${id}`
+    `https://openapi.programming-hero.com/api/peddy/category/${categoryName}`
   );
   const data = await res.json();
   document.getElementById("pet-container").innerHTML = "";
