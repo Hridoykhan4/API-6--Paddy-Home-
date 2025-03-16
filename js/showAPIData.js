@@ -44,7 +44,6 @@ const showCategories = (petCategories) => {
 
 const removeAllBtnColors = () => {
   const sameBtn = document.querySelectorAll(".same-btn");
-  console.log(sameBtn);
   for (const btn of sameBtn) {
     btn.classList.remove("btn-primary", "hover:bg-sky-700");
   }
@@ -116,7 +115,7 @@ const showAllPets = (allPets) => {
           }
       </div>
       <div class="mt-3 flex items-center gap-3 font-semibold text-gray-600 ">
-          <i class="fa-solid fa-shield-cat"></i><span> <span id="price-container">Price: ${
+          <i class="fa-solid fa-shield-cat"></i><span> <span class="price-container">Price: ${
             pet.price
           }</span>
       </div>

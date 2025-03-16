@@ -6,15 +6,15 @@ sortBtn.addEventListener("click", () => {
 
   allCards.sort((a, b) => {
     const priceA = parseFloat(
-      a.querySelector("#price-container").innerText.replace("Price: ", "")
+      a.querySelector(".price-container").innerText.replace("Price: ", "")
     );
     const priceB = parseFloat(
-      b.querySelector("#price-container").innerText.replace("Price: ", "")
+      b.querySelector(".price-container").innerText.replace("Price: ", "")
     );
 
     return priceB - priceA;
   });
 
   petContainer.innerHTML = "";
-  allCards.forEach((card) => petContainer.appendChild(card))
+  allCards.forEach((card) => petContainer.appendChild(card));
 });
